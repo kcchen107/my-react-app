@@ -71,6 +71,8 @@ function Board({xNext, squares, onPlay}) {
     <div className="status">{status} </div>
     <div className="boardRow">
       <Square value={square[0]} clickSquare={() => handleClick(0)} />
+      <Square value={square[1]} clickSquare={() => handleClick(1)} />
+      <Square value={square[2]} clickSquare={() => handleClick(2)} />
     </div>
   }
 }
