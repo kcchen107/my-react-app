@@ -112,17 +112,18 @@ export default function Game() {
   });
 
 return {
-  <div className = "tttGame" >
-  <><div className="tttBoard">
-    <Board xNext={xNext} squares={currentSquares} onPlay={handlePlay} />
-  </div>
+  <>
+  <div className="tttGame" >
+    <div className="tttBoard">
+      <Board xNext={xNext} squares={currentSquares} onPlay={handlePlay} />
+    </div>
     <div className='tttInfo'>
       <ol>
         {moves}
       </ol>
-    </div></>
+    </div>
   </div >
-};
+  </>
 }
 
 function determineWinner(squares) {
