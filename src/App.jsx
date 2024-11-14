@@ -35,7 +35,7 @@ function App() {
 export default App
 
 
-function Square ({value, click}) {
+function Square({ value, click }) {
   return (
     <button className="square" onClick={(click)}>
       {value}
@@ -43,7 +43,7 @@ function Square ({value, click}) {
   );
 }
 
-function Board({xNext, squares, onPlay}) {
+function Board({ xNext, squares, onPlay }) {
   function handleClick(i) {
     if (calcWinner(squares) || squares(i)) {
       return;
@@ -64,7 +64,7 @@ function Board({xNext, squares, onPlay}) {
     status = 'winner' + winner;
   }
   else {
-    status = 'nextPerson:' + (xNext? 'X':'O');
+    status = 'nextPerson:' + (xNext ? 'X' : 'O');
   }
   return {
     <> <><div className="status">{status} </div><div className="boardRow">
@@ -79,6 +79,6 @@ function Board({xNext, squares, onPlay}) {
         <Square value={squares[6]} click={() => handleClick(6)} />
         <Square value={squares[7]} click={() => handleClick(7)} />
         <Square value={squares[8]} click={() => handleClick(8)} />
-      </div></> </>
-  }
+      </div> </> </>
+  };
 }
