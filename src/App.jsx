@@ -33,3 +33,27 @@ function App() {
 }
 
 export default App
+
+
+function Square ({value, click}) {
+  return (
+    <button class="square" onClick={(click)}>
+      {value}
+    </button>
+  );
+}
+
+function Board({xNext, squares, onPlay}) {
+  function handleClick(i) {
+    if (calcWinner(squares) || squares(i)) {
+      return;
+    }
+    const nextSquares = squares.slice();
+    if (xNext) {
+      next[i] = 'X';
+    }
+    else {
+      next[i] = 'O';
+    }
+    onPlay(nextSquares);
+  }
