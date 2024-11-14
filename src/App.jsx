@@ -32,9 +32,6 @@ function App() {
   )
 }
 
-export default App
-
-
 function Square({ value, click }) {
   return (
     <button className="square" onClick={(click)}>
@@ -79,7 +76,7 @@ function Board({ xNext, squares, onPlay }) {
         <Square value={squares[6]} click={() => handleClick(6)} />
         <Square value={squares[7]} click={() => handleClick(7)} />
         <Square value={squares[8]} click={() => handleClick(8)} />
-      </div> </> </>
+      </div></> </>
   };
 }
 
