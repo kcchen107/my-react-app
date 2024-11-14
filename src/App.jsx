@@ -146,4 +146,5 @@ function determineWinner(squares) {
       return squares[x];
     }
   }
+  return null;
 }
