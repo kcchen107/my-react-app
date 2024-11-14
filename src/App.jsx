@@ -139,5 +139,8 @@ function determineWinner(squares) {
     [2,5,8],
     [0,4,8],
     [2,4,6],
-  ]
+  ];
+  for (; i < lines.length; i++) {
+    
+  }
 }
