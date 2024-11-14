@@ -82,3 +82,56 @@ function Board({ xNext, squares, onPlay }) {
       </div> </> </>
   };
 }
+
+export default function Game() {
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [currentMove, chooseCurrentMove] = useState(0);
+  const xNext = currentMove % 2 === 0;
+  const currentSquares = history[currentMove];
+
+  function handlePlay(nextSquares) {
+    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares]
+    setHistory(nextHistory);
+    chooseCurrentMove(nextHistory.length - 1);
+  }
+
+  function jumpTo(nextMove) {
+    chooseCurrentMove(nextMove);
+  }
+
+  const moves = history.map((squares, move) => {
+    let description;
+    if (move > 0) {
+      description = 'Go to move number' + move;
+    }
+    else {
+      description = "Return to start";
+    }
+    return {
+      <li key = { move } >
+      <button onClick={() jumpTo(move)}> { description } 
+      </button >
+      </li >
+    };
+  }
+});
+
+return {
+  <div className="tttGame">
+    <><div className="tttBoard">
+      <Board xNext={xNext} squares={currentSquares} onPlay={handlePlay} />
+    </div><div className='tttInfo'>
+        <ol>
+          {moves}
+        </ol>
+      </div>
+    </div>
+};
+}
+
+function determineWinner(squares) {
+  const lines = [
+    [0,1,2],
+    
+  ]
+}
