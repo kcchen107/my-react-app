@@ -66,4 +66,11 @@ function Board({xNext, squares, onPlay}) {
   else {
     status = 'nextPerson:' + (xNext? 'X':'O');
   }
-
+  return {
+    <>
+    <div className="status">{status} </div>
+    <div className="boardRow">
+      <Square value={square[0]} clickSquare={() => handleClick(0)} />
+    </div>
+  }
+}
