@@ -59,3 +59,11 @@ function Board({xNext, squares, onPlay}) {
   }
 
   const determineWinner = calcWinner(squares);
+  let status;
+  if (winner) {
+    status = 'winner' + winner;
+  }
+  else {
+    status = 'nextPerson:' + (xNext? 'X':'O');
+  }
+
