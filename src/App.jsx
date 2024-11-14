@@ -37,7 +37,7 @@ export default App
 
 function Square ({value, click}) {
   return (
-    <button class="square" onClick={(click)}>
+    <button className="square" onClick={(click)}>
       {value}
     </button>
   );
