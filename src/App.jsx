@@ -57,3 +57,5 @@ function Board({xNext, squares, onPlay}) {
     }
     onPlay(nextSquares);
   }
+
+  const determineWinner = calcWinner(squares);
